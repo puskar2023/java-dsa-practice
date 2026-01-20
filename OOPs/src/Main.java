@@ -1,19 +1,35 @@
 import java.util.Scanner;
 
 class Algebra {
-    int sum(int a, int b){
-        int ans = a + b;
-        return ans;
+    int a;
+    int b;
+
+    Algebra(int x, int y){
+        a = x;
+        b = y;
+    }
+
+    int sum(){
+        return a + b;
+    }
+    int sub(){
+        return a - b;
+    }
+    int mul(){
+        return a * b;
     }
 }
 
 public class Main {
     public static void main(String[] args) {
-        Algebra obj = new Algebra();
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
-        System.out.println("Sum of " + a + " and " + b + " is " + obj.sum(a, b));
+        Algebra obj = new Algebra(a, b);
+        System.out.println(obj.sum());
+        System.out.println(obj.sub());
+        System.out.println(obj.mul());
+
 
     }
 }

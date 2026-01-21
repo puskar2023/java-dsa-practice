@@ -34,6 +34,20 @@ class Arrays{
         System.out.println(max);
     }
 
+    void findElement(){
+        int[] arr = {1, 2, 3, 4, 9, 5};
+        int x = 9;
+        int ans = -1;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i]==x){
+                ans = i;
+                break;
+            }
+        }
+        System.out.println("Found " + x + " at index " + ans);
+    }
+
+
 
 
 }
@@ -44,5 +58,6 @@ public class Main {
 //        obj.array();
 //        obj.multiarray();
         obj.calcMax();
+        obj.findElement();
     }
 }

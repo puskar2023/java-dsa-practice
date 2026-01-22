@@ -14,12 +14,17 @@ class Arrays{
     }
     void array(){
         Scanner sc = new Scanner(System.in);
-        int[] arr = new int[6];
-        for(int i = 0; i < arr.length; i++) {
+        System.out.println("ENter no. of element");
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println("enter " + n + " elements");
+
+        for(int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
         for(int item: arr){
-            System.out.println(item);
+            System.out.print(item+ " ");
         }
     }
 
@@ -55,9 +60,9 @@ class Arrays{
 public class Main {
     public static void main(String[] args) {
         Arrays obj = new Arrays();
-//        obj.array();
+        obj.array();
 //        obj.multiarray();
-        obj.calcMax();
-        obj.findElement();
+//        obj.calcMax();
+//        obj.findElement();
     }
 }

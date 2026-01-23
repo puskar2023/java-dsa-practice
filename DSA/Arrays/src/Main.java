@@ -1,8 +1,10 @@
 import java.util.Scanner;
+import java.util.Arrays;
+
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-class Arrays{
+class Array{
     void multiarray(){
         int[][] arr = {{1,3,2}, {3,6,5}, {9,3,7}, {4,3,6}};
         for(int i = 0; i < arr.length; i++){
@@ -52,15 +54,48 @@ class Arrays{
         System.out.println("Found " + x + " at index " + ans);
     }
 
+    void clone_arr(int[] arr){
+//        int[] arr_2 = arr.clone();
+//        int[] arr_2 = Arrays.copyOf(arr, arr.length);
+        int[] arr_2 = Arrays.copyOfRange(arr, 0, arr.length);
 
+        System.out.println("Original array");
+        for(int i: arr){
+            System.out.print(i + " ");
+        }
+        System.out.println();
+       arr_2[0] = 0;
+      arr_2[1] = 0;
 
+        System.out.println("Original array after change");
+        for(int i: arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        System.out.println("New array after change");
+        for(int i: arr_2){
+            System.out.print(i + " ");
+        }
+    }
+
+    int countOccurrence(int[] arr, int x){
+        int c = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(x == arr[i]) c++;
+        }
+        return c;
+    }
 
 }
 
 public class Main {
     public static void main(String[] args) {
-        Arrays obj = new Arrays();
-        obj.array();
+        int[] arr = {6, 6, 3, 6, 6, 3, 6, 9, 3, 6};
+
+        Array obj = new Array();
+        System.out.println(obj.countOccurrence(arr, 6));
+//        obj.clone_arr(arr);
+//        obj.array();
 //        obj.multiarray();
 //        obj.calcMax();
 //        obj.findElement();

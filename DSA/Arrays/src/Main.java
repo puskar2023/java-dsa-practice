@@ -105,14 +105,27 @@ class Array{
         }
         return val;
     }
+    int[] smallestAndLargest(int[] arr){
+        int[] arr_2 = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(arr_2);
+        int sm = arr_2[0];
+        int lr = arr_2[arr_2.length-1];
+        int[] res = {sm, lr};
+        return res;
+    }
+
 }
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 6, 6, 7};
+        int[] arr = {1, 2, 3, 6, 6, 7, 2, 3};
 
         Array obj = new Array();
-        System.out.println(obj.isSorted(arr));
+        int[] res = obj.smallestAndLargest(arr);
+        for(int i: res){
+            System.out.print(i + " ");
+        }
+//        System.out.println(obj.isSorted(arr));
 //        System.out.println(obj.lastOccurrence(arr, 6));
 //        System.out.println(obj.countOccurrence(arr, 6));
 //        obj.clone_arr(arr);

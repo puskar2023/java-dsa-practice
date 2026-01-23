@@ -85,7 +85,14 @@ class Array{
         }
         return c;
     }
+    int lastOccurrence(int[] arr, int x) {
 
+        int lo = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (x == arr[i]) lo = i;
+        }
+        return lo;
+    }
 }
 
 public class Main {
@@ -93,7 +100,8 @@ public class Main {
         int[] arr = {6, 6, 3, 6, 6, 3, 6, 9, 3, 6};
 
         Array obj = new Array();
-        System.out.println(obj.countOccurrence(arr, 6));
+        System.out.println(obj.lastOccurrence(arr, 6));
+//        System.out.println(obj.countOccurrence(arr, 6));
 //        obj.clone_arr(arr);
 //        obj.array();
 //        obj.multiarray();

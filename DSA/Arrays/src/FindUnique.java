@@ -19,6 +19,31 @@ public class FindUnique {
         }
         return ans;
     }
+
+    static int findSecondMax(int[] array){
+        int[] arr = array.clone();
+        int ans = -1;
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+        }
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] == max){
+                arr[i] = Integer.MIN_VALUE;
+            }
+        }
+        ans = Integer.MIN_VALUE;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > ans){
+                ans = arr[i];
+            }
+        }
+
+
+        return ans;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array");
@@ -29,7 +54,8 @@ public class FindUnique {
             arr[i] = sc.nextInt();
         }
 
-        System.out.println("Unique element: " + findUnique(arr));
+//        System.out.println("Unique element: " + findUnique(arr));
+        System.out.println("Second largest element is: " + findSecondMax(arr));
 
     }
 }

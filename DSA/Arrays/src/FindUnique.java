@@ -44,6 +44,20 @@ public class FindUnique {
 
         return ans;
     }
+
+    static int firstRepeatingElement(int[] arr){
+        int n = arr.length;
+        for(int i = 0; i < n; i++){
+            for(int j = i+1; j < n; j++){
+                if(arr[i] == arr[j]){
+                    return arr[i];
+                }
+            }
+        }
+        return -1;
+    }
+
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array");
@@ -55,7 +69,8 @@ public class FindUnique {
         }
 
 //        System.out.println("Unique element: " + findUnique(arr));
-        System.out.println("Second largest element is: " + findSecondMax(arr));
+//        System.out.println("Second largest element is: " + findSecondMax(arr));
+        System.out.println("First repeating element is:" + firstRepeatingElement(arr));
 
     }
 }

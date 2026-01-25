@@ -15,14 +15,21 @@ public class Basic_Problem_Solving {
         System.out.println("a" + a);
         System.out.println("b" + b);
     }
+
+    static void swapInArray(int[] arr, int a, int b){
+        int temp = arr[a];
+        arr[a] = arr[b];
+        arr[b] = temp;
+    }
+
+    
+
     static int[] reverseArray(int[] arr){
         int n = arr.length;
         int i = 0;
         int j = n-1;
         while(i < j){
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+            swapInArray(arr, i, j);
             i++;
             j--;
         }

@@ -49,6 +49,27 @@ public class Basic_Problem_Solving {
 
     }
 
+    static int[] rotateWithoutSpace(int[] arr, int k){
+        int n = arr.length;
+        k = k % n;
+        reverseArray(arr);
+        int i = 0;
+        int j = k-1;
+        while(i < j){
+            swapInArray(arr, i, j);
+            i++;
+            j--;
+        }
+        i = k;
+        j = n-1;
+        while(i < j){
+            swapInArray(arr, i, j);
+            i++;
+            j--;
+        }
+        return arr;
+    }
+
     static void display(int[] arr){
         for(int i: arr){
             System.out.print(i + " ");
@@ -73,7 +94,7 @@ public class Basic_Problem_Solving {
 //        }
         System.out.println("Enter no of cycle");
         int k = sc.nextInt();
-        int[] ans = rotate(arr, k);
+        int[] ans = rotateWithoutSpace(arr, k);
         display(ans);
 
 

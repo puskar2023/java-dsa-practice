@@ -42,6 +42,26 @@ public class SortZerosAndOnes {
         }
     }
 
+    static int[] sortSquares(int[] arr){
+        int n = arr.length;
+        int[] ans = new int[n];
+        int i = 0;
+        int j = n-1;
+        int s = n-1;
+        while(i <= j){
+            int leftsqrt = arr[i] * arr[i];
+            int rightsqrt = arr[j] * arr[j];
+            if(leftsqrt > rightsqrt){
+                ans[s--] = leftsqrt;
+                i++;
+            }else{
+                ans[s--] = rightsqrt;
+                j--;
+            }
+        }
+        return ans;
+    }
+
     static void display(int[] arr){
         for(int i: arr){
             System.out.print(i + " ");
@@ -59,8 +79,9 @@ public class SortZerosAndOnes {
             arr[i] = sc.nextInt();
         }
 //        sortZerosAndOnes(arr);
-        sortUsingTwoPointer(arr);
+//        sortUsingTwoPointer(arr);
+        int[] ans = sortSquares(arr);
 
-        display(arr);
+        display(ans);
     }
 }

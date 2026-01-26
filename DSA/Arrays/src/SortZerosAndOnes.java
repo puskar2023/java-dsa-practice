@@ -49,13 +49,11 @@ public class SortZerosAndOnes {
         int j = n-1;
         int s = n-1;
         while(i <= j){
-            int leftsqrt = arr[i] * arr[i];
-            int rightsqrt = arr[j] * arr[j];
-            if(leftsqrt > rightsqrt){
-                ans[s--] = leftsqrt;
+            if(Math.abs(arr[i]) > Math.abs(arr[j])){
+                ans[s--] = arr[i] * arr[i];
                 i++;
             }else{
-                ans[s--] = rightsqrt;
+                ans[s--] = arr[j] * arr[j];
                 j--;
             }
         }

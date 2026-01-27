@@ -3,10 +3,8 @@ import java.util.Scanner;
 public class PrefixSum {
     static int[] prefixSum(int[] arr){
         int n = arr.length;
-        int sum = 0;
-        for(int i = 0; i < n; i++){
-            sum += arr[i];
-            arr[i] = sum;
+        for(int i = 1; i < n; i++){
+            arr[i] = arr[i-1] + arr[i];
         }
         return arr;
     }

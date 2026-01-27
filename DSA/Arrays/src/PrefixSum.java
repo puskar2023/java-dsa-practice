@@ -9,6 +9,14 @@ public class PrefixSum {
         return arr;
     }
 
+    static void sumValues(int[] arr, int r, int l){
+        int sum = 0;
+        for(int i = r; i <= l; i++){
+            sum += arr[i];
+        }
+        System.out.println(sum);
+    }
+
     static void display(int[] arr){
         for(int i: arr){
             System.out.print(i + " ");
@@ -20,12 +28,23 @@ public class PrefixSum {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the size of the array");
         int n = sc.nextInt();
-        int[] arr = new int[n];
+        int[] arr = new int[n + 1];
         System.out.println("Enter all elements");
-        for(int i = 0; i < n; i++) {
+        for(int i = 1; i <= n; i++) {
             arr[i] = sc.nextInt();
         }
-        int[] ans = prefixSum(arr);
-        display(ans);
+//        int[] ans = prefixSum(arr);
+//        display(ans);
+
+        System.out.println("Enter number of querys");
+        int q = sc.nextInt();
+        while(q > 0){
+            System.out.println("Enter the range: ");
+            int r = sc.nextInt();
+            int l = sc.nextInt();
+            sumValues(arr, r, l);
+            System.out.println();
+            q--;
+        }
     }
 }

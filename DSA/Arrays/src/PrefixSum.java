@@ -19,7 +19,6 @@ public class PrefixSum {
 
     static boolean isSubarrayAvailable(int[] arr){
         int n = arr.length;
-        boolean check = false;
         int sum = 0;
         for(int i = 0; i < n; i++){
             sum += arr[i];
@@ -28,11 +27,10 @@ public class PrefixSum {
         for(int i = 0; i < n-1; i++){
             prefixsum += arr[i];
             if(prefixsum == sum-prefixsum){
-                check = true;
-                break;
+                return true;
             }
         }
-        return check;
+        return false;
     }
 
     static void display(int[] arr){

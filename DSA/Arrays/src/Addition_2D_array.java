@@ -22,11 +22,11 @@ public class Addition_2D_array {
         return ans;
     }
 
-    static int[][] multiplication(int[][] arr1, int[][] arr2, int r1, int r2, int c1, int c2){
+    static void multiplication(int[][] arr1, int[][] arr2, int r1, int r2, int c1, int c2){
         int[][] ans = new int[r1][c2];
         if(c1 != r2){
             System.out.println("multiplication is not possible");
-            return ans;
+            return;
         }
 
         for(int i = 0; i < r1; i++){
@@ -36,7 +36,8 @@ public class Addition_2D_array {
                 }
             }
         }
-        return ans;
+        display(ans, r1, c2);
+        return;
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -62,8 +63,7 @@ public class Addition_2D_array {
                 array2[i][j] = sc.nextInt();
             }
         }
-        int[][] ans = multiplication(array1, array2, r1, r2, c1, c2);
-        display(ans, r1, c2);
+        multiplication(array1, array2, r1, r2, c1, c2);
 
     }
 }

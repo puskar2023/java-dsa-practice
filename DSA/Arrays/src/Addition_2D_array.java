@@ -41,13 +41,13 @@ public class Addition_2D_array {
     }
 
     static void transpose(int[][] arr){
-        int[][] ans = new int[arr.length][arr[0].length];
-        for(int i = 0; i < arr.length; i++){
-            for(int j = 0; j < arr[i].length; j++){
+        int[][] ans = new int[arr[0].length][arr.length];
+        for(int i = 0; i < arr[0].length; i++){
+            for(int j = 0; j < arr.length; j++){
                 ans[i][j] = arr[j][i];
             }
         }
-        display(ans, arr.length, arr[0].length);
+        display(ans, arr[0].length, arr.length);
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);

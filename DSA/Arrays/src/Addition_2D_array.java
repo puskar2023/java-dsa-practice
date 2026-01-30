@@ -40,6 +40,31 @@ public class Addition_2D_array {
         return;
     }
 
+    static void reverse(int[] arr){
+        int l = 0;
+        int r = arr.length-1;
+        while(l < r){
+            int temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+            l++;
+            r--;
+        }
+    }
+
+    static void rotate2DArray(int[][] arr, int r, int c){
+        int[][] trans = new int[c][r];
+        for(int i = 0; i < c; i++){
+            for(int j = 0; j < r; j++){
+                trans[i][j] = arr[j][i];
+            }
+        }
+        for(int i = 0; i < trans.length; i++){
+            reverse(trans[i]);
+        }
+        display(trans, c, r);
+    }
+
     static void transpose(int[][] arr){
         int[][] ans = new int[arr[0].length][arr.length];
         if(arr[0].length != arr.length){
@@ -100,6 +125,7 @@ public class Addition_2D_array {
                 array[i][j] = sc.nextInt();
             }
         }
-        transpose(array);
+//        transpose(array);
+        rotate2DArray(array, r, c);
     }
 }

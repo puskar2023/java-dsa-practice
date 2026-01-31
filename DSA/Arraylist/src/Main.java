@@ -12,8 +12,11 @@ public class Main {
         l1.add(7);
         l1.add(8);
         l1.add(9);
-        for(int i = 0; i < l1.size(); i++){
-            System.out.println(l1.get(i));
-        }
+//        for(int i = 0; i < l1.size(); i++){
+//            System.out.println(l1.get(i));
+//        }
+        l1.add(1, 100);
+        l1.set(1, 10);
+        System.out.println(l1);
     }
 }

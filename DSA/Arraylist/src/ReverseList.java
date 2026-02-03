@@ -28,5 +28,13 @@ public class ReverseList {
 
         Collections.sort(l, Collections.reverseOrder()); //decreasing order
         System.out.println("Decreasing order: " + l);
+
+        ArrayList<String> sl = new ArrayList<>();
+        sl.add("Hello");
+        sl.add("Welcome");
+        sl.add("To");
+        sl.add("Code");
+        Collections.sort(sl);
+        System.out.println(sl);
     }
 }

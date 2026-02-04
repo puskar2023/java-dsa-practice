@@ -35,11 +35,18 @@ public class Main {
         return fibonacci(n-1) + fibonacci(n-2);
     }
 
-    static int sumoddigits(int n){
+    static int sumofdigits(int n){
         if(n >= 0 && n <= 9){
             return n;
         }
-        return (n % 10) + sumoddigits(n / 10);
+        return (n % 10) + sumofdigits(n / 10);
+    }
+
+    static int countdigits(int n){
+        if(n >= 0 && n <= 9){
+            return 1;
+        }
+        return 1 + countdigits(n / 10);
     }
 
     public static void main(String[] args) {
@@ -54,6 +61,9 @@ public class Main {
 //        for(int i = 1; i <= n; i++){
 //            System.out.print(fibonacci(i) + " ");
 //        }
-        System.out.println(sumoddigits(n));
+
+//        System.out.println(sumofdigits(n));
+
+        System.out.println(countdigits(n));
     }
 }

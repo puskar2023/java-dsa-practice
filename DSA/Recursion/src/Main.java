@@ -35,14 +35,25 @@ public class Main {
         return fibonacci(n-1) + fibonacci(n-2);
     }
 
+    static int sumoddigits(int n){
+        if(n >= 0 && n <= 9){
+            return n;
+        }
+        return (n % 10) + sumoddigits(n / 10);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
 //        printIncreasing(n);
+
 //        printDecreasing(n);
+
 //        System.out.println(factorial(n));
-        for(int i = 1; i <= n; i++){
-            System.out.print(fibonacci(i) + " ");
-        }
+
+//        for(int i = 1; i <= n; i++){
+//            System.out.print(fibonacci(i) + " ");
+//        }
+        System.out.println(sumoddigits(n));
     }
 }

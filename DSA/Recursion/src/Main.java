@@ -49,9 +49,17 @@ public class Main {
         return 1 + countdigits(n / 10);
     }
 
+    static int powerofnumber(int p, int q){
+        if(q == 1){
+            return p;
+        }
+        return p * powerofnumber(p, q-1);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        int q = sc.nextInt();
 //        printIncreasing(n);
 
 //        printDecreasing(n);
@@ -64,6 +72,8 @@ public class Main {
 
 //        System.out.println(sumofdigits(n));
 
-        System.out.println(countdigits(n));
+//        System.out.println(countdigits(n));
+
+        System.out.println(powerofnumber(n, q));
     }
 }

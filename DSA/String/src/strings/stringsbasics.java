@@ -23,8 +23,13 @@ public class stringsbasics {
 //        System.out.println(str.contains("He"));
 //        System.out.println(str.startsWith("Hello"));
 
-        String str1 = "Hello";
-        String str2 = "World";
-        System.out.println(str1.concat(str2));
+//        String str1 = "Hello";
+//        String str2 = "World";
+//        System.out.println(str1.concat(str2));
+
+        String s1 = "Hello";
+        String s2 = "Hello";
+        String s3 = new String("Hello");
+        System.out.println(s1.equals(s3));
     }
 }

@@ -27,9 +27,9 @@ public class stringsbasics {
 //        String str2 = "World";
 //        System.out.println(str1.concat(str2));
 
-        String s1 = "Hello";
-        String s2 = "Hello";
-        String s3 = new String("Hello");
-        System.out.println(s1.equals(s3));
+//        String s1 = "Hello";
+//        String s2 = "Hello";
+//        String s3 = new String("Hello");
+//        System.out.println(s1.equals(s3));
     }
 }

@@ -5,12 +5,23 @@ public class Basic_ll {
             head = head.next;
         }
     }
+
     public static void displayreverse(Node head){
         if(head == null) return;
         displayreverse(head.next);
-        System.out.println(head.data);
+        System.out.print(head.data + " ");
         return;
     }
+
+    public static int size(Node head){
+        int c = 0;
+        while(head != null){
+            c++;
+            head = head.next;
+        }
+        return c;
+    }
+
     public static class Node{
         int data;
         Node next;
@@ -27,5 +38,7 @@ public class Basic_ll {
         b.next = c;
 //        display(a);
         displayreverse(a);
+        System.out.println();
+        System.out.println(size(a));
     }
 }

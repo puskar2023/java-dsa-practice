@@ -71,6 +71,7 @@ public class Implementation {
         ll.insertAtEnd(5);
         ll.insertAtEnd(1);
         ll.insertAt(2,3);
+        ll.insertAt(6,3);
         System.out.println(ll.size());
         ll.display();
 

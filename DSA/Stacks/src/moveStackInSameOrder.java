@@ -3,6 +3,17 @@ import java.util.Stack;
 
 public class moveStackInSameOrder {
 
+    public static void display(Stack<Integer> st){
+        if(st.size() == 0){
+            return;
+        }
+        int top = st.pop();
+        display(st);
+        System.out.println(top);
+        st.push(top);
+        return;
+    }
+
     public static Stack<Integer> reverseStack(Stack<Integer> st){
         Stack<Integer> revst = new Stack<>();
         while(st.size() > 0){
@@ -25,5 +36,9 @@ public class moveStackInSameOrder {
         System.out.println("Original stack: " + st);
         Stack<Integer> revst = reverseStack(st);
         System.out.println("Reverse stack: " + revst);
+        Stack<Integer> ogst = reverseStack(revst);
+        System.out.println("New stack same order: " + ogst);
+        display(ogst);
+        System.out.println("New stack same order: " + ogst);
     }
 }
